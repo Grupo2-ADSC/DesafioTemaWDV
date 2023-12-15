@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: #585856;
 }
 
 :root {
@@ -21,7 +21,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #3cb371;
+  border-bottom: 2px solid #030303;
 }
 
 .header .container {
@@ -32,11 +32,12 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #3cb371;
+  color: #61b486;
 }
 
 .agora {
   font-weight: 800;
+  color:#141414 ;
 }
 
 .navbar {
@@ -45,7 +46,7 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #3cb371;
+  color: #141414;
 }
 
 .titulo {
@@ -267,6 +268,6 @@ body {
 
 .simulador .container {
   flex-direction: column;
-  overflow: hidden; 
+  overflow: hi; 
   height: var(--tamanho-simulador);
 }
