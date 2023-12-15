@@ -7,7 +7,7 @@ body {
 
 :root {
   --tamanho-header: 80px;
-  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-banner: calc(140vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
@@ -60,12 +60,13 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/DigitalLibrary.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .banner .container {
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   height: 100%;
 }
