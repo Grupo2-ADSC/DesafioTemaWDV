@@ -6,9 +6,9 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE arquiv_it;
 
-USE aquatech;
+USE arquiv_it;
 
 CREATE TABLE empresa (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -33,8 +33,8 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
+create table gaveta (
+/* em nossa regra de negócio, uma gaveta tem apenas um sensor */
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	descricao VARCHAR(300),
 	fk_empresa INT,
@@ -45,18 +45,21 @@ create table aquario (
 
 create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
+	dht11_umidade DECIMAL (10,1),
+	dht11_temperatura DECIMAL (10,1),
+	luminosidade DECIMAL (10,1),
+	lm35_temperatura DECIMAL (10,1),
 	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+	momento DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fk_gaveta INT,
+	FOREIGN KEY (fk_gaveta) REFERENCES gaveta(id)
 );
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
+insert into empresa (razao_social, cnpj) values ('BookTech', '00000000000000');
+insert into gaveta  (descricao, fk_empresa) values ('Arquivos RH', 1);
+insert into medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, fk_gaveta) values (46.7, 20.8, 44.3, 33.9, 1, 1);
+
+select * from medida;
 
 /*
 comando para sql server - banco remoto - ambiente de produção

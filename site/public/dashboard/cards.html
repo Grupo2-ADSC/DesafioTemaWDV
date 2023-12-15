@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>Arquiv-IT | Tempo Real</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboards.css">
@@ -19,20 +19,20 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="exibirGavetas(),  atualizacaoPeriodica(), validarSessao()" >
 
     <div class="janela">
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>Arquiv-IT</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Gavetas</h3>
             </div>
 
             <div class="btn-nav-white">
@@ -59,27 +59,27 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo</h4>
-                    <h2>&lt;=5°C</h2>
+                    <h2>&lt;= 9°C </h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Alerta</h4>
-                    <h2>&lt;=10°C</h2>
+                    <h2>&lt;=10° a 17°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
-                    <h2>20°C</h2>
+                    <h2>18° a 25°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>&gt;=22°C</h2>
+                    <h2>&gt;=26° a 33°C</h2>
                 </div>
                 <div class="item-regua perigo-quente">
                     <h4>Perigo</h4>
-                    <h2>&gt;=23°C</h2>
+                    <h2>&gt;=34°C</h2>
                 </div>
             </div>
 
-            <div class="cards" id="cardAquarios">
+            <div class="cards" id="cardGavetas">
 
             </div>
 
@@ -91,13 +91,13 @@
 
 <script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
+    function exibirGavetas() {
+        JSON.parse(sessionStorage.GAVETAS).forEach(item => {
+            document.getElementById("cardGavetas").innerHTML += `
                     <div class="card">
                         <h1>${item.descricao}</h1>
                         <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
+                            <p id="temp_gaveta_${item.id}">-°C</p>
                         </div>
                         <div class="cor-alerta" id="card_${item.id}"></div>
                     </div>
