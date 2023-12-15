@@ -1,5 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+var gavetaModel = require("../models/gavetaModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -20,18 +20,18 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
 
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
+                        gavetaModel.buscarGavetasPorEmpresa(resultadoAutenticar[0].empresaId)
+                            .then((resultadoGavetas) => {
+                                if (resultadoGavetas.length > 0) {
                                     res.json({
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
                                         senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
+                                        gavetas: resultadoGavetas
                                     });
                                 } else {
-                                    res.status(204).json({ aquarios: [] });
+                                    res.status(204).json({ gavetas: [] });
                                 }
                             })
                     } else if (resultadoAutenticar.length == 0) {
