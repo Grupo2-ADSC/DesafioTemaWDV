@@ -104,12 +104,17 @@ body {
 .box {
   width: 280px;
   height: 450px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.img{
+  border: 3px solid #3cb371;
+  border-radius: 50%;
+}
 .box p {
   text-align: center;
 }
