@@ -21,7 +21,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  border-bottom: 2px solid #3cb371;
 }
 
 .header .container {
@@ -32,7 +32,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #3cb371;
 }
 
 .agora {
@@ -45,11 +45,11 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #3cb371;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #3cb371;
   width: fit-content;
   font-weight: 500;
 }
@@ -126,6 +126,7 @@ body {
 }
 
 .card {
+  padding-top: 30px;
   width: 30%;
   background-color: #e5e5e5;
   border-radius: 10px;
@@ -133,7 +134,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  color: #d1660e;
+  color: #35424a;
   row-gap: 20px;
 }
 
@@ -143,7 +144,7 @@ body {
 
 .card-login {
   height: 60%;
-  background: transparent;
+  background: #e5e5e5;
   backdrop-filter: blur(8px);
 }
 
@@ -166,14 +167,14 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #c78903;
+  border: 2px solid #35424a;
   height: 30px;
   text-align: center;
   border-radius: 10px;
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
+  border: 2px solid #35424a;
   background-color: white;
   color: gray;
   height: 36px;
@@ -195,7 +196,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #d1660ec4;
+  background-color: #35424a;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -240,7 +241,7 @@ body {
 .footer {
   height: var(--tamanho-footer);
   width: 100%;
-  background-color: #32b9cd;
+  background-color: #3cb372ad;
   color: #fff;
 }
 
@@ -266,6 +267,6 @@ body {
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
+  overflow: hidden; 
   height: var(--tamanho-simulador);
 }
